@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LoginPage"
+             x:Class="LoginPage.MainPage"
+             BackgroundImage="background.jpg">
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Spacing="2" Padding="1" VerticalOptions="Center" >
+                <Frame CornerRadius="15" >
+
+                    <StackLayout>
+                        <!-- Place new controls here -->
+                        <Image Source="logointec.png" 
+                           HeightRequest="100"
+                           WidthRequest="100"/>
+
+                        <Entry Placeholder="Matricula" 
+                           x:Name="entryMatricula"
+                           HorizontalOptions="Fill" 
+                           VerticalOptions="CenterAndExpand"/>
+
+                        <Entry Placeholder="Password" 
+                           x:Name="entryPassword"
+                           IsPassword="True"
+                           HorizontalOptions="Fill" 
+                           VerticalOptions="CenterAndExpand"/>
+
+                        <Button Text="Login"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="End"
+                            Clicked="OnLoginClicked"
+                            BackgroundColor="DarkRed"
+                            TextColor="White"
+                            BorderColor="Black"
+                            BorderRadius="4"/>
+
+                        <Label Text="Don't have user yet?"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Start"
+                           IsVisible="true"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           TextColor="Black" />
+
+                        <Label TextColor="Blue" Text="Sign Up!"  
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextDecorations="Underline"
+                               FontSize="Small">
+                            
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ClickCommand}" CommandParameter="{Binding Model.LinkURL}"/>
+                            </Label.GestureRecognizers>
+                            
+                        </Label>
+
+                    </StackLayout>
+                    
+                </Frame>
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
